@@ -1,0 +1,11 @@
+# @scaffold-config — scaffold infra/scripts/env. Change project name, domains, and env only. See SCAFFOLD.md
+
+tls:
+  certificates:
+    - certFile: /certs/xxyyzz.localhost.pem
+      keyFile: /certs/xxyyzz.localhost-key.pem
+  stores:
+    default:
+      defaultCertificate:
+        certFile: /certs/xxyyzz.localhost.pem
+        keyFile: /certs/xxyyzz.localhost-key.pem

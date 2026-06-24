@@ -1,0 +1,37 @@
+# @scaffold-config — scaffold infra/scripts/env. Change project name, domains, and env only. See SCAFFOLD.md
+
+entryPoints:
+  web:
+    address: ":80"
+    http:
+      redirections:
+        entryPoint:
+          to: websecure
+          scheme: https
+  websecure:
+    address: ":443"
+  api1:
+    address: ":3001"
+  studio:
+    address: ":5555"
+  redis-ui:
+    address: ":8081"
+  ping:
+    address: ":8082"
+
+providers:
+  docker:
+    exposedByDefault: false
+    network: xxyyzz-net
+  file:
+    directory: /etc/traefik/dynamic
+    watch: true
+
+api:
+  dashboard: false
+
+ping:
+  entryPoint: ping
+
+log:
+  level: WARN
